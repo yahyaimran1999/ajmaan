@@ -1,0 +1,85 @@
+<?php
+
+namespace App\Http\Resources;
+
+use Carbon\Carbon;
+use App\Models\MwSection;
+use Illuminate\Http\Resources\Json\JsonResource;
+
+class MwPlaceAnAdResource extends JsonResource
+{
+    public function toArray($request): array
+    {
+        return [
+            'id' => $this->id,
+            'ad_title' => $this->ad_title,
+            'ad_description' => $this->ad_description,
+            'ad_title_ar' => $this->ad_title_ar,
+            'ad_description_ar' => $this->ad_description_ar,
+            'price' => $this->price,
+            'model' => $this->model,
+            'status' => $this->status,
+            'slug' => $this->slug,
+            'location_latitude' => $this->location_latitude,
+            'location_longitude' => $this->location_longitude,
+            'area_location' => $this->area_location,
+            'street_address' => $this->street_address,
+            'bathrooms' => $this->bathrooms,
+            'bedrooms' => $this->bedrooms,
+            'balconies' => $this->balconies,
+            'total_floor' => $this->total_floor,
+            'car_parking' => $this->car_parking,
+            'builtup_area' => $this->builtup_area,
+            'plot_area' => $this->plot_area,
+            'property_name' => $this->property_name,
+            'PrimaryUnitView' => $this->PrimaryUnitView,
+            'FloorNo' => $this->FloorNo,
+            'parking' => $this->parking,
+            'furnished' => $this->furnished,
+            'maid_room' => $this->maid_room,
+            'year_built' => $this->year_built,
+            'mobile_number' => $this->mobile_number,
+            'contact_name' => $this->contact_name,
+            'contact_email' => $this->contact_email,
+            'salesman_email' => $this->salesman_email,
+            'construction_status' => $this->construction_status,
+            'transaction_type' => $this->transaction_type,
+            'occupant_status' => $this->occupant_status,
+            'rent_paid' => $this->rent_paid,
+            'youtube_url' => $this->youtube_url,
+            'types_pdf' => $this->types_pdf,
+            'floor_pdf' => $this->floor_pdf,
+            'payment_pdf' => $this->payment_pdf,
+            'broucher' => $this->broucher,
+            'd_name' => $this->d_name,
+            'd_description' => $this->d_description,
+            'd_logo' => $this->d_logo,
+            'meta_title' => $this->meta_title,
+            'meta_keywords' => $this->meta_keywords,
+            'meta_description' => $this->meta_description,
+            'date_added' => Carbon::parse($this->date_added)->format('Y-m-d'),
+            'last_updated' => $this->last_updated,
+            'HandoverDate' => $this->HandoverDate,
+            'expiry_date' => $this->expiry_date,
+            'favourite' => $this->mw_ad_favourites->where('user_id', auth()->id())->count() > 0,
+            'images' => MwAdImageResource::collection($this->whenLoaded('mw_ad_images')->where('isTrash', 0)),
+            'section' =>new MwSectionResource($this->whenLoaded('mw_section')),
+            'category' => new MwCategoryResource($this->whenLoaded('mw_category')),
+            'country' => new MwCountryResource($this->whenLoaded('mw_country')),
+            'state' => new MwStateResource($this->whenLoaded('mw_state')),
+            'city' => new MwCityResource($this->whenLoaded('mw_city')),
+            'district' => new MwDistrictResource($this->whenLoaded('mw_district')),
+            'developer' => new MwDeveloperResource($this->whenLoaded('mw_developer')),
+            'subcategory' => new MwSubcategoryResource($this->whenLoaded('mw_subcategory')),
+            'user' => new MwListingUserAgencyResource($this->whenLoaded('mw_listing_user')),
+            'amenity' => MwAdAmenityResource::collection($this->whenLoaded('mw_ad_amenity')),
+            'faqs' => MwAdFaqResource::collection($this->whenLoaded('mw_ad_faqs')),
+            'favourites' => MwAdFavouriteResource::collection($this->whenLoaded('mw_ad_favourites')),
+            'floor_plans' => MwAdFloorPlanResource::collection($this->whenLoaded('mw_ad_floor_plans')),
+            'nearest_schools' => MwAdNearestSchoolResource::collection($this->whenLoaded('mw_ad_nearest_schools')),
+            'property_types' => MwAdPropertyTypeResource::collection($this->whenLoaded('mw_ad_property_types')),
+            'community' => new MwCommunityResource($this->whenLoaded('mw_community')),
+            'sub_community' => new MwSubCommunityResource($this->whenLoaded('mw_sub_community')),
+        ];
+    }
+}

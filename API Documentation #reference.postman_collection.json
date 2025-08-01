@@ -1,0 +1,4665 @@
+{
+	"info": {
+		"_postman_id": "14f199b1-5fd2-473e-a21c-23322a88d109",
+		"name": "API Documentation #reference",
+		"description": "This template contains a boilerplate for documentation that you can quickly customize and reuse.\n\n### How to use this template:\n\n- Replace the content given brackets (()) with your API's details.\n- Tips are formatted in `codespan` - feel free to read and remove them.\n    \n\n---\n\n`Start with a brief overview of what your API offers.`\n\nThe ((product name)) provides many API products, tools, and resources that enable you to ((add product value here)).\n\n`You can also list the APIs you offer, link to the relevant pages, or do both in this section.`\n\n## **Getting started guide**\n\n`List the steps or points required to start using your APIs. Make sure to cover everything required to reach success with your API as quickly as possible.`\n\nTo start using the ((add APIs here)), you need to -\n\n`The points given below are from The Postman API's documentation. You can reference it to write your own getting started guide.`\n\n- You must use a valid API Key to send requests to the API endpoints. You can get your API key from Postman's [integrations dashboard](https://go.postman.co/settings/me/api-keys).\n- The API has [rate and usage limits](https://learning.postman.com/docs/developer/postman-api/postman-api-rate-limits/).\n- The API only responds to HTTPS-secured communications. Any requests sent via HTTP return an HTTP 301 redirect to the corresponding HTTPS resources.\n- The API returns request responses in JSON format. When an API request returns an error, it is sent in the JSON response as an error key.\n    \n\n## Authentication\n\n`Add details on the authorization keys/tokens required, steps that cover how to get them, and the relevant error codes.`\n\nThe ((product name)) API uses ((add your API's authorization type)) for authentication.\n\n`The details given below are from the Postman API's documentation. You can reference it to write your own authentication section.`\n\nPostman uses API keys for authentication. You can generate a Postman API key in the [API keys](https://postman.postman.co/settings/me/api-keys) section of your Postman account settings.\n\nYou must include an API key in each request to the Postman API with the X-Api-Key request header.\n\n### Authentication error response\n\nIf an API key is missing, malformed, or invalid, you will receive an HTTP 401 Unauthorized response code.\n\n## Rate and usage limits\n\n`Use this section to cover your APIs' terms of use. Include API limits, constraints, and relevant error codes, so consumers understand the permitted API usage and practices.`\n\n`The example given below is from The Postman API's documentation. Use it as a reference to write your APIs' terms of use.`\n\nAPI access rate limits apply at a per-API key basis in unit time. The limit is 300 requests per minute. Also, depending on your plan, you may have usage limits. If you exceed either limit, your request will return an HTTP 429 Too Many Requests status code.\n\nEach API response returns the following set of headers to help you identify your use status:\n\n| Header | Description |\n| --- | --- |\n| `X-RateLimit-Limit` | The maximum number of requests that the consumer is permitted to make per minute. |\n| `X-RateLimit-Remaining` | The number of requests remaining in the current rate limit window. |\n| `X-RateLimit-Reset` | The time at which the current rate limit window resets in UTC epoch seconds. |\n\n### 503 response\n\nAn HTTP `503` response from our servers indicates there is an unexpected spike in API access traffic. The server is usually operational within the next five minutes. If the outage persists or you receive any other form of an HTTP `5XX` error, [contact support](https://support.postman.com/hc/en-us/requests/new/).\n\n### **Need some help?**\n\n`Add links that customers can refer to whenever they need help.`\n\nIn case you have questions, go through our tutorials ((link to your video or help documentation here)). Or visit our FAQ page ((link to the relevant page)).\n\nOr you can check out our community forum, there’s a good chance our community has an answer for you. Visit our developer forum ((link to developer forum)) to review topics, ask questions, and learn from others.\n\n`You can also document or add links to libraries, code examples, and other resources needed to make a request.`",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13228184",
+		"_collection_link": "https://markloops-7589.postman.co/workspace/AjmaanApi~39f5d808-c48e-4a38-9af9-842722df1ae8/collection/23944187-14f199b1-5fd2-473e-a21c-23322a88d109?action=share&source=collection_link&creator=13228184"
+	},
+	"item": [
+		{
+			"name": "Dashboard",
+			"item": [
+				{
+					"name": "Get Dashboard Data",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{auth_token}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/dashboard",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"dashboard"
+							]
+						},
+						"description": "Get dashboard statistics and analytics"
+					},
+					"response": []
+				}
+			],
+			"description": "Dashboard endpoints"
+		},
+		{
+			"name": "Statistics",
+			"item": [
+				{
+					"name": "Get Statistics",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{auth_token}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/statistics",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"statistics"
+							]
+						},
+						"description": "Get dashboard statistics and analytics"
+					},
+					"response": []
+				}
+			],
+			"description": "Dashboard endpoints"
+		},
+		{
+			"name": "Categories",
+			"item": [
+				{
+					"name": "List Categories",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/categories",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buy List Categories",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n    \"name\": \"John Doee\",\r\n    \"email\": \"john@example.com\",\r\n    \"phone\": \"+971501234567\",\r\n    \"meassage\": \"I am interested in this property\",\r\n    \"ad_id\": 22\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/categories?type=buy",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"categories"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "buy"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Rent List Categories",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n    \"name\": \"John Doee\",\r\n    \"email\": \"john@example.com\",\r\n    \"phone\": \"+971501234567\",\r\n    \"meassage\": \"I am interested in this property\",\r\n    \"ad_id\": 22\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/categories?type=rent",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"categories"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "rent"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Development List Categories",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n    \"name\": \"John Doee\",\r\n    \"email\": \"john@example.com\",\r\n    \"phone\": \"+971501234567\",\r\n    \"meassage\": \"I am interested in this property\",\r\n    \"ad_id\": 22\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/categories?type=new_development",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"categories"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "new_development"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Commerical List Categories",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n    \"name\": \"John Doee\",\r\n    \"email\": \"john@example.com\",\r\n    \"phone\": \"+971501234567\",\r\n    \"meassage\": \"I am interested in this property\",\r\n    \"ad_id\": 22\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/categories?type=commercial",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"categories"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "commercial"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Residential List Categories",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n    \"name\": \"John Doee\",\r\n    \"email\": \"john@example.com\",\r\n    \"phone\": \"+971501234567\",\r\n    \"meassage\": \"I am interested in this property\",\r\n    \"ad_id\": 22\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/categories?type=residential",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"categories"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "residential"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Specializations",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/specializations",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"specializations"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Buy Properties",
+			"item": [
+				{
+					"name": "Buy List Ads",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/place-an-ad?type=buy&category_id=&listing_type=&per_page=20&sort_order=desc&search=",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"place-an-ad"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "buy"
+								},
+								{
+									"key": "category_id",
+									"value": ""
+								},
+								{
+									"key": "listing_type",
+									"value": ""
+								},
+								{
+									"key": "per_page",
+									"value": "20"
+								},
+								{
+									"key": "sort_order",
+									"value": "desc"
+								},
+								{
+									"key": "search",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Enquiry",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n    \"name\": \"John Doee\",\r\n    \"email\": \"john@example.com\",\r\n    \"phone\": \"+971501234567\",\r\n    \"meassage\": \"I am interested in this property\",\r\n    \"contact_type\": \"ENQUIRY\",\r\n    \"ad_id\": 22\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/contact",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"contact"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show Ads",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/place-an-ad/4777",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"place-an-ad",
+								"4777"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Rent Properties",
+			"item": [
+				{
+					"name": "Rent List Ads",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/place-an-ad?type=rent&category_id=&listing_type=&per_page=10&sort_order=desc&search=",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"place-an-ad"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "rent"
+								},
+								{
+									"key": "category_id",
+									"value": ""
+								},
+								{
+									"key": "listing_type",
+									"value": ""
+								},
+								{
+									"key": "per_page",
+									"value": "10"
+								},
+								{
+									"key": "sort_order",
+									"value": "desc"
+								},
+								{
+									"key": "search",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Enquiry",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n    \"name\": \"John Doee\",\r\n    \"email\": \"john@example.com\",\r\n    \"phone\": \"+971501234567\",\r\n    \"meassage\": \"I am interested in this property\",\r\n    \"contact_type\": \"ENQUIRY\",\r\n    \"ad_id\": 22\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/contact",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"contact"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show Ads",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/place-an-ad/4777",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"place-an-ad",
+								"4777"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Projects",
+			"item": [
+				{
+					"name": "New Development List Ads",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/place-an-ad?type=new_development&category_id=&listing_type=&per_page=10&sort_order=desc&search=",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"place-an-ad"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "new_development"
+								},
+								{
+									"key": "category_id",
+									"value": ""
+								},
+								{
+									"key": "listing_type",
+									"value": ""
+								},
+								{
+									"key": "per_page",
+									"value": "10"
+								},
+								{
+									"key": "sort_order",
+									"value": "desc"
+								},
+								{
+									"key": "search",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Enquiry",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n    \"name\": \"John Doee\",\r\n    \"email\": \"john@example.com\",\r\n    \"phone\": \"+971501234567\",\r\n    \"meassage\": \"I am interested in this property\",\r\n    \"contact_type\": \"ENQUIRY\",\r\n    \"ad_id\": 22\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/contact",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"contact"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show Ads",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/place-an-ad/4691",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"place-an-ad",
+								"4691"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Sell Properties",
+			"item": [
+				{
+					"name": "Create Enquiry",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n    \"name\": \"John Doee\",\r\n    \"email\": \"john@example.com\",\r\n    \"phone\": \"+971501234567\",\r\n    \"meassage\": \"I am interested to Sell property\",\r\n    \"contact_type\": \"ENQUIRY\",\r\n    \"ad_id\": 22\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/contact",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"contact"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Real Estate Properties",
+			"item": [
+				{
+					"name": "List agency",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/listing-users?type=agency&per_page=10&sort_order=desc&company_name=&address=",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"listing-users"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "agency"
+								},
+								{
+									"key": "per_page",
+									"value": "10"
+								},
+								{
+									"key": "sort_order",
+									"value": "desc"
+								},
+								{
+									"key": "company_name",
+									"value": ""
+								},
+								{
+									"key": "address",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show agency",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/listing-users/115",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"listing-users",
+								"115"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Articles & Guides",
+			"item": [
+				{
+					"name": "List article",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/articles?per_page=10&sort_order=desc&category_id=&search=",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"articles"
+							],
+							"query": [
+								{
+									"key": "per_page",
+									"value": "10"
+								},
+								{
+									"key": "sort_order",
+									"value": "desc"
+								},
+								{
+									"key": "category_id",
+									"value": ""
+								},
+								{
+									"key": "search",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List categories article",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/article-categories?per_page=10&sort_order=desc&search=",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"article-categories"
+							],
+							"query": [
+								{
+									"key": "per_page",
+									"value": "10"
+								},
+								{
+									"key": "sort_order",
+									"value": "desc"
+								},
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "search",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show article",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/articles/652",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"articles",
+								"652"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List area guide",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/area-guides?type=area&per_page=10&sort_order=desc&search=&category_id=",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"area-guides"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "area"
+								},
+								{
+									"key": "per_page",
+									"value": "10"
+								},
+								{
+									"key": "sort_order",
+									"value": "desc"
+								},
+								{
+									"key": "search",
+									"value": ""
+								},
+								{
+									"key": "category_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List school guide",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/area-guides?type=school&per_page=10&sort_order=desc&search=&category_id=",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"area-guides"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "school"
+								},
+								{
+									"key": "per_page",
+									"value": "10"
+								},
+								{
+									"key": "sort_order",
+									"value": "desc"
+								},
+								{
+									"key": "search",
+									"value": ""
+								},
+								{
+									"key": "category_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List building guide",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/area-guides?type=building&per_page=10&sort_order=desc&search=&category_id=",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"area-guides"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "building"
+								},
+								{
+									"key": "per_page",
+									"value": "10"
+								},
+								{
+									"key": "sort_order",
+									"value": "desc"
+								},
+								{
+									"key": "search",
+									"value": ""
+								},
+								{
+									"key": "category_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List hostel guide",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/area-guides?type=hostel&per_page=10&sort_order=desc&search=&category_id=",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"area-guides"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "hostel"
+								},
+								{
+									"key": "per_page",
+									"value": "10"
+								},
+								{
+									"key": "sort_order",
+									"value": "desc"
+								},
+								{
+									"key": "search",
+									"value": ""
+								},
+								{
+									"key": "category_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show guide",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/area-guides/7",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"area-guides",
+								"7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Searches",
+			"item": [
+				{
+					"name": "Buy list filters",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/place-an-ad?type=buy&category_type=residential&category_id=&min_price&max_price&bedrooms&bathrooms&min_area&max_area&max_plot_area&min_plot_area&per_page=20&sort_order=desc&search",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"place-an-ad"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "buy"
+								},
+								{
+									"key": "category_type",
+									"value": "residential"
+								},
+								{
+									"key": "category_id",
+									"value": ""
+								},
+								{
+									"key": "min_price",
+									"value": null
+								},
+								{
+									"key": "max_price",
+									"value": null
+								},
+								{
+									"key": "bedrooms",
+									"value": null
+								},
+								{
+									"key": "bathrooms",
+									"value": null
+								},
+								{
+									"key": "min_area",
+									"value": null
+								},
+								{
+									"key": "max_area",
+									"value": null
+								},
+								{
+									"key": "max_plot_area",
+									"value": null
+								},
+								{
+									"key": "min_plot_area",
+									"value": null
+								},
+								{
+									"key": "per_page",
+									"value": "20"
+								},
+								{
+									"key": "sort_order",
+									"value": "desc"
+								},
+								{
+									"key": "search",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Rent list filters",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/place-an-ad?type=rent&category_type=commercial&category_id=&min_price&max_price&bedrooms&bathrooms&min_area&max_area&max_plot_area&min_plot_area&per_page=20&sort_order=desc&search",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"place-an-ad"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "rent"
+								},
+								{
+									"key": "category_type",
+									"value": "commercial"
+								},
+								{
+									"key": "category_id",
+									"value": ""
+								},
+								{
+									"key": "min_price",
+									"value": null
+								},
+								{
+									"key": "max_price",
+									"value": null
+								},
+								{
+									"key": "bedrooms",
+									"value": null
+								},
+								{
+									"key": "bathrooms",
+									"value": null
+								},
+								{
+									"key": "min_area",
+									"value": null
+								},
+								{
+									"key": "max_area",
+									"value": null
+								},
+								{
+									"key": "max_plot_area",
+									"value": null
+								},
+								{
+									"key": "min_plot_area",
+									"value": null
+								},
+								{
+									"key": "per_page",
+									"value": "20"
+								},
+								{
+									"key": "sort_order",
+									"value": "desc"
+								},
+								{
+									"key": "search",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sold list filters",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/place-an-ad?type=sold&category_type=commercial&category_id=&min_price&max_price&bedrooms&bathrooms&min_area&max_area&max_plot_area&min_plot_area&per_page=20&sort_order=desc&search",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"place-an-ad"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "sold"
+								},
+								{
+									"key": "category_type",
+									"value": "commercial"
+								},
+								{
+									"key": "category_id",
+									"value": ""
+								},
+								{
+									"key": "min_price",
+									"value": null
+								},
+								{
+									"key": "max_price",
+									"value": null
+								},
+								{
+									"key": "bedrooms",
+									"value": null
+								},
+								{
+									"key": "bathrooms",
+									"value": null
+								},
+								{
+									"key": "min_area",
+									"value": null
+								},
+								{
+									"key": "max_area",
+									"value": null
+								},
+								{
+									"key": "max_plot_area",
+									"value": null
+								},
+								{
+									"key": "min_plot_area",
+									"value": null
+								},
+								{
+									"key": "per_page",
+									"value": "20"
+								},
+								{
+									"key": "sort_order",
+									"value": "desc"
+								},
+								{
+									"key": "search",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Favourites",
+			"item": [
+				{
+					"name": "List Favourites Ads",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/favourites?per_page=10&sort_order=desc",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"favourites"
+							],
+							"query": [
+								{
+									"key": "per_page",
+									"value": "10"
+								},
+								{
+									"key": "sort_order",
+									"value": "desc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User List Favourites Ads",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/favourites?user_id=104325&per_page=10&sort_order=desc",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"favourites"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "104325"
+								},
+								{
+									"key": "per_page",
+									"value": "10"
+								},
+								{
+									"key": "sort_order",
+									"value": "desc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Farvourite Ad",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\": 7481,\r\n    \"ad_id\": 22\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/favourites",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"favourites"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Farvourite Ad",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n    \"user_id\": 104325,\r\n    \"ad_id\": 4789\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/favourites",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"favourites"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Sign Up",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"user@example.com\",\n    \"password\": \"Password@123\",\n    \"phone\": \"+923101996639\",\n    \"is_real_estate_agent\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/signup",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"signup"
+							]
+						},
+						"description": "Register a new user account"
+					},
+					"response": []
+				},
+				{
+					"name": "Sign Up (Real Estate Agency)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"agent@example.com\",\n    \"password\": \"password123\",\n    \"phone\": \"+971501234567\",\n    \"is_real_estate_agent\": true,\n    \"first_name\": \"John\",\n    \"last_name\": \"Doe\",\n    \"company_name\": \"Acme Real Estate\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/signup",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"signup"
+							]
+						},
+						"description": "Register a new real estate agent account"
+					},
+					"response": []
+				},
+				{
+					"name": "Verify OTP",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": 104359,\n    \"otp\": \"119785\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/verify-otp",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"verify-otp"
+							]
+						},
+						"description": "Verify a user's phone number using the OTP sent via WhatsApp"
+					},
+					"response": []
+				},
+				{
+					"name": "Resend OTP",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": 123\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/resend-otp",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"resend-otp"
+							]
+						},
+						"description": "Resend OTP to the user's WhatsApp number"
+					},
+					"response": []
+				},
+				{
+					"name": "Sign In",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"if (pm.response.code === 200) {",
+									"    const response = pm.response.json();",
+									"    if (response.success && response.data.access_token) {",
+									"        pm.environment.set('auth_token', response.data.access_token);",
+									"    }",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "// Agency\n\n{\n    \"email\": \"rakanajman@gmail.com\",\n    \"password\": \"Glorious@7372\"\n}\n\n// Agent\n\n// {\n//     \"email\": \"waqar.ahmed0003@gmail.com\",\n//     \"password\": \"Waqar123\"\n// }\n\n// Normal User\n\n// {\n//     \"email\": \"gejitaw787@dlbazi.com\",\n//     \"password\": \"Password@123\"\n// }"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/signin",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"signin"
+							]
+						},
+						"description": "Login with email and password"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Current User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/me",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"me"
+							]
+						},
+						"description": "Get current authenticated user information"
+					},
+					"response": []
+				},
+				{
+					"name": "Google OAuth Redirect",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/auth/google",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"google"
+							]
+						},
+						"description": "Redirect the user to Google for OAuth authentication"
+					},
+					"response": []
+				},
+				{
+					"name": "Google OAuth Callback",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/auth/google/callback",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"google",
+								"callback"
+							]
+						},
+						"description": "Handle the callback from Google OAuth"
+					},
+					"response": []
+				},
+				{
+					"name": "Facebook OAuth Redirect",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/auth/facebook",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"facebook"
+							]
+						},
+						"description": "Redirect the user to Facebook for OAuth authentication"
+					},
+					"response": []
+				},
+				{
+					"name": "Facebook OAuth Callback",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/auth/facebook/callback",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"facebook",
+								"callback"
+							]
+						},
+						"description": "Handle the callback from Facebook OAuth"
+					},
+					"response": []
+				},
+				{
+					"name": "Apple OAuth Redirect",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/auth/apple",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"apple"
+							]
+						},
+						"description": "Redirect the user to Apple for OAuth authentication"
+					},
+					"response": []
+				},
+				{
+					"name": "Apple OAuth Callback",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/auth/apple/callback",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"apple",
+								"callback"
+							]
+						},
+						"description": "Handle the callback from Apple OAuth"
+					},
+					"response": []
+				},
+				{
+					"name": "Forgot Password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"john.doe@example.com\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/forgot-password",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"forgot-password"
+							]
+						},
+						"description": "Send password reset link to email"
+					},
+					"response": []
+				},
+				{
+					"name": "Reset Password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"token\": \"reset_token_from_email\",\n    \"email\": \"john.doe@example.com\",\n    \"password\": \"newpassword123\",\n    \"password_confirmation\": \"newpassword123\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/reset-password",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"reset-password"
+							]
+						},
+						"description": "Reset password using token from email"
+					},
+					"response": []
+				},
+				{
+					"name": "Change Password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"current_password\": \"oldpassword123\",\n    \"new_password\": \"Newpassword@123\",\n    \"new_password_confirmation\": \"Newpassword@123\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/change-password",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"change-password"
+							]
+						},
+						"description": "Reset password using token from email"
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/logout",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"logout"
+							]
+						},
+						"description": "Logout from current device (revoke current token)"
+					},
+					"response": []
+				},
+				{
+					"name": "Logout All Devices",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/logout-all",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"logout-all"
+							]
+						},
+						"description": "Logout from all devices (revoke all tokens)"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Agency",
+			"item": [
+				{
+					"name": "Upload File",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "multipart/form-data",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"description": "Select a file (.png, .jpg, .jpeg, .pdf) - Max 10MB",
+									"type": "file",
+									"src": "postman-cloud:///1f03d193-c37e-4c20-8202-27eb75002c16"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/upload-file",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"upload-file"
+							]
+						},
+						"description": "Upload a file to external server. Accepts PNG, JPG, JPEG, PDF files up to 10MB."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete File",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"filename\": \"0525_17485846386802620_.png\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/delete-file",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"delete-file"
+							]
+						},
+						"description": "Delete a file from external server using filename"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Agency",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_name\": \"John\",\n    \"last_name\": \"Smith\",\n    \"email\": \"john@agency.com\",\n    \"phone\": \"+97143334444\",\n    \"address\": \"123 Business Street, Dubai, UAE\",\n    \"contact_person\": null,\n    \"profile_image\":\"\",\n    // \"rera_number\": \"RERA123456\",\n    // \"rera_date_issued\": \"2023-01-15\",\n    \"arra_number\": \"ARRA789012\",\n    \"arra_expiry_date\": \"2024-12-31\",\n    \"trade_license_number\": \"TL345678\",\n    \"trade_license_date_issued\": \"2023-02-01\",\n    \"vat_number\": \"VAT123456789\",\n    \"company_name\": \"ABC Real Estate Agency\",\n    \"company_email\": \"info@abcrealestate.com\",\n    \"no_of_employees\": 25,\n    \"whatsapp\": \"+971501234567\",\n    \"website\": \"https://www.abcrealestate.com\",\n    \"facebook\": \"https://facebook.com/abcrealestate\",\n    \"instagram\": \"https://instagram.com/abcrealestate\",\n    \"twitter\": \"https://twitter.com/abcrealestate\",\n    \"youtube\": \"https://youtube.com/abcrealestate\",\n    \"company_logo\":\"0525_17485846386802620_.png\",\n    \"rera_document\":\"0525_17485850303362517_.pdf\",\n    \"arra_document\":\"0525_17485846386802620_.png\",\n    \"trade_license_document\":\"0525_17485850303362517_.pdf\",\n    \"vat_registration_certificate\":\"0525_17485846386802620_.png\",\n    \"specialization\": [101, 121, 120],\n    \"languages_known\": [5,6],\n    \"description\": \"Leading real estate agency in Dubai with over 10 years of experience.\",\n    \"user_type\":\"K\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/listing-users/104338",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"listing-users",
+								"104338"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List agency agents",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/listing-users?type=agent&agency_id=2826&per_page=10&sort_order=desc&company_name=&address=",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"listing-users"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "agent"
+								},
+								{
+									"key": "agency_id",
+									"value": "2826"
+								},
+								{
+									"key": "per_page",
+									"value": "10"
+								},
+								{
+									"key": "sort_order",
+									"value": "desc"
+								},
+								{
+									"key": "company_name",
+									"value": ""
+								},
+								{
+									"key": "address",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List agency ads",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/place-an-ad/user-ads?agency_id=2826&category_id=&per_page=10&sort_order=desc&type=buy&category_type=residential&search=&status=published",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"place-an-ad",
+								"user-ads"
+							],
+							"query": [
+								{
+									"key": "agency_id",
+									"value": "2826"
+								},
+								{
+									"key": "category_id",
+									"value": ""
+								},
+								{
+									"key": "per_page",
+									"value": "10"
+								},
+								{
+									"key": "sort_order",
+									"value": "desc"
+								},
+								{
+									"key": "type",
+									"value": "buy",
+									"description": "use sold,buy,rent"
+								},
+								{
+									"key": "category_type",
+									"value": "residential",
+									"description": "use residential and commercial"
+								},
+								{
+									"key": "search",
+									"value": ""
+								},
+								{
+									"key": "status",
+									"value": "published"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Agent",
+			"item": [
+				{
+					"name": "List agent",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/listing-users?type=agent&per_page=10&sort_order=desc&company_name=&address=",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"listing-users"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "agent"
+								},
+								{
+									"key": "per_page",
+									"value": "10"
+								},
+								{
+									"key": "sort_order",
+									"value": "desc"
+								},
+								{
+									"key": "company_name",
+									"value": ""
+								},
+								{
+									"key": "address",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Agent",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"agency_id\": 104338,\n    \"first_name\": \"maxwel\",\n    \"last_name\": \"Taylor\",\n    \"email\": \"maxwell@agent.com\",\n    \"phone\": \"+97143335555\",\n    \"password\": \"admin123\",\n    \"password_confirm\": \"admin123\",\n    \"address\": \"456 Agent Street, Dubai, UAE\",\n    \"profile_image\":\"0525_17485846386802620_.png\",\n    \"mobile\": \"+971502345678\",\n    \"whatsapp\": \"+971502345678\",\n    \"languages_known\": [5,6],\n    \"specialization\": [120],\n    \"description\": \"Experienced real estate agent specializing in luxury properties in Dubai Marina and Downtown areas.\",\n    \"licence_no\": \"LIC789012\",\n    \"country_id\": 65908,\n    \"state_id\": 55164,\n    \"gender\": \"M\",\n    \"user_status\": \"A\",\n    \"user_type\": \"A\",\n    \"service_id\": 22,\n    \"arra_number\": \"ARRA789012\",\n    \"arra_expiry_date\": \"2024-12-31\",\n    \"arra_document\":\"0525_17485846386802620_.png\",\n    \"eid_number\": \"EID789012\",\n    \"eid_expiry_date\": \"2024-12-29\",\n    \"eid_document\":\"0525_17485846386802620_.png\",\n    \"dob\": \"1985-06-15\",\n    \"facebook\": \"https://facebook.com/abcrealestate\",\n    \"instagram\": \"https://instagram.com/abcrealestate\",\n    \"twitter\": \"https://twitter.com/abcrealestate\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/listing-users/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"listing-users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Agent",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"agency_id\": 104338,\n    \"first_name\": \"Steveeess\",\n    \"last_name\": \"Taylor\",\n    \"email\": \"steve@agent.com\",\n    \"phone\": \"+97143335555\",\n    \"address\": \"456 Agent Street, Dubai, UAE\",\n    \"profile_image\":\"0525_17485846386802620_.png\",\n    \"mobile\": \"+971502345678\",\n    \"whatsapp\": \"+971502345678\",\n    \"languages_known\": [5,8],\n    \"specialization\": [120],\n    \"description\": \"Experienced real estate agent specializing in luxury properties in Dubai Marina and Downtown areas.\",\n    \"licence_no\": \"LIC789012\",\n    \"country_id\": 65908,\n    \"state_id\": 55164,\n    \"gender\": \"M\",\n    \"user_status\": \"A\",\n    \"user_type\": \"A\",\n    \"service_id\": 22,\n    \"arra_number\": \"ARRA789012\",\n    \"arra_expiry_date\": \"2024-12-31\",\n    \"arra_document\":\"0525_17485846386802620_.png\",\n    \"eid_number\": \"EID789012\",\n    \"eid_expiry_date\": \"2024-12-29\",\n    \"eid_document\":\"0525_17485846386802620_.png\",\n    \"dob\": \"1985-06-15\",\n    \"facebook\": \"https://facebook.com/abcrealestate\",\n    \"instagram\": \"https://instagram.com/abcrealestate\",\n    \"twitter\": \"https://twitter.com/abcrealestate\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/listing-users/104343",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"listing-users",
+								"104343"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show agent",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/listing-users/104338",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"listing-users",
+								"104338"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List agent ads",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/place-an-ad/user-ads?agent_id=89086&category_id=&per_page=10&sort_order=desc&type=sold&category_type=residential&status=published&search=",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"place-an-ad",
+								"user-ads"
+							],
+							"query": [
+								{
+									"key": "agent_id",
+									"value": "89086"
+								},
+								{
+									"key": "category_id",
+									"value": ""
+								},
+								{
+									"key": "per_page",
+									"value": "10"
+								},
+								{
+									"key": "sort_order",
+									"value": "desc"
+								},
+								{
+									"key": "type",
+									"value": "sold"
+								},
+								{
+									"key": "category_type",
+									"value": "residential"
+								},
+								{
+									"key": "status",
+									"value": "published"
+								},
+								{
+									"key": "search",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Agent Review",
+			"item": [
+				{
+					"name": "Create Agent Review",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"agent_id\": 818,\n    \"rating\": 5,\n    \"review\": \"Excellent service! The agent was very professional and helpful throughout the entire process.\",\n    \"name\": \"John Doe\",\n    \"email\": \"john.doe@example.com\",\n    \"phone\": \"+971501234567\",\n    \"property_type\": 1,\n    \"location\": \"Dubai Marina\",\n    \"when_interact\": \"1\",\n    \"sect\": \"2\",\n    \"property_link\": \"https://example.com/property/123\",\n    \"user_id\": null\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/agent-reviews",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"agent-reviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Agent Review",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"rating\": 4,\n    \"review\": \"Good service overall. Agent was responsive and knowledgeable.\",\n    \"name\": \"John Doe Updated\",\n    \"location\": \"Dubai Marina - JBR\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/agent-reviews/11",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"agent-reviews",
+								"11"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Reviews",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/agent-reviews?status=&per_page=10&sort_by=review_id&sort_order=desc",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"agent-reviews"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "",
+									"description": "use waiting,approved,rejected"
+								},
+								{
+									"key": "per_page",
+									"value": "10"
+								},
+								{
+									"key": "sort_by",
+									"value": "review_id"
+								},
+								{
+									"key": "sort_order",
+									"value": "desc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Agent Reviews",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/agent-reviews?agent_id=818&status=&per_page=10&sort_by=review_id&sort_order=desc",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"agent-reviews"
+							],
+							"query": [
+								{
+									"key": "agent_id",
+									"value": "818"
+								},
+								{
+									"key": "status",
+									"value": "",
+									"description": "use waiting,approved,rejected"
+								},
+								{
+									"key": "per_page",
+									"value": "10"
+								},
+								{
+									"key": "sort_by",
+									"value": "review_id"
+								},
+								{
+									"key": "sort_order",
+									"value": "desc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show Single Review",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/agent-reviews/11",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"agent-reviews",
+								"11"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Approve Single Review",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/agent-reviews/11/approve",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"agent-reviews",
+								"11",
+								"approve"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reject Single Review",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/agent-reviews/11/reject",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"agent-reviews",
+								"11",
+								"reject"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Agent Review",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/agent-reviews/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"agent-reviews",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Listings",
+			"item": [
+				{
+					"name": "Get Languages",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/listings/languages",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"listings",
+								"languages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Services",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/listings/services",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"listings",
+								"services"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Countries",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/listings/countries",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"listings",
+								"countries"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Categories",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/listings/categories",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"listings",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get States",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/listings/states",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"listings",
+								"states"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Cities",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/listings/cities",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"listings",
+								"cities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get States by Country",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/listings/countries/1/states",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"listings",
+								"countries",
+								"1",
+								"states"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Cities by State",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/listings/states/55164/cities",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"listings",
+								"states",
+								"55164",
+								"cities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Community",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/listings/cities/195598/community",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"listings",
+								"cities",
+								"195598",
+								"community"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Published Ads",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/place-an-ad/user-ads?agency_id=115&status=published&category_id=&per_page=10&sort_order=desc&search=&city_id&bedrooms&ads_type=&type=buy",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"place-an-ad",
+								"user-ads"
+							],
+							"query": [
+								{
+									"key": "agency_id",
+									"value": "115"
+								},
+								{
+									"key": "status",
+									"value": "published"
+								},
+								{
+									"key": "category_id",
+									"value": ""
+								},
+								{
+									"key": "per_page",
+									"value": "10"
+								},
+								{
+									"key": "sort_order",
+									"value": "desc"
+								},
+								{
+									"key": "search",
+									"value": ""
+								},
+								{
+									"key": "city_id",
+									"value": null
+								},
+								{
+									"key": "bedrooms",
+									"value": null
+								},
+								{
+									"key": "ads_type",
+									"value": "",
+									"description": "promoted,featured,hot,premium"
+								},
+								{
+									"key": "type",
+									"value": "buy",
+									"description": "buy,rent,new_development,sold"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Inactive Ads",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/place-an-ad/user-ads?agency_id=115&status=inactive&category_id=&per_page=10& sort_order=desc&search=&city_id&bedrooms&ads_type&type",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"place-an-ad",
+								"user-ads"
+							],
+							"query": [
+								{
+									"key": "agency_id",
+									"value": "115"
+								},
+								{
+									"key": "status",
+									"value": "inactive"
+								},
+								{
+									"key": "category_id",
+									"value": ""
+								},
+								{
+									"key": "per_page",
+									"value": "10"
+								},
+								{
+									"key": " sort_order",
+									"value": "desc"
+								},
+								{
+									"key": "search",
+									"value": ""
+								},
+								{
+									"key": "city_id",
+									"value": null
+								},
+								{
+									"key": "bedrooms",
+									"value": null
+								},
+								{
+									"key": "ads_type",
+									"value": null
+								},
+								{
+									"key": "type",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Waiting Ads",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/place-an-ad/user-ads?agency_id=115&status=waiting&category_id=&per_page=10& sort_order=desc&search=&city_id&bedrooms&ads_type&type",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"place-an-ad",
+								"user-ads"
+							],
+							"query": [
+								{
+									"key": "agency_id",
+									"value": "115"
+								},
+								{
+									"key": "status",
+									"value": "waiting"
+								},
+								{
+									"key": "category_id",
+									"value": ""
+								},
+								{
+									"key": "per_page",
+									"value": "10"
+								},
+								{
+									"key": " sort_order",
+									"value": "desc"
+								},
+								{
+									"key": "search",
+									"value": ""
+								},
+								{
+									"key": "city_id",
+									"value": null
+								},
+								{
+									"key": "bedrooms",
+									"value": null
+								},
+								{
+									"key": "ads_type",
+									"value": null
+								},
+								{
+									"key": "type",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Rejected Ads",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/place-an-ad/user-ads?agency_id=115&status=rejected&category_id=&per_page=10& sort_order=desc&search=&city_id&bedrooms&ads_type&type",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"place-an-ad",
+								"user-ads"
+							],
+							"query": [
+								{
+									"key": "agency_id",
+									"value": "115"
+								},
+								{
+									"key": "status",
+									"value": "rejected"
+								},
+								{
+									"key": "category_id",
+									"value": ""
+								},
+								{
+									"key": "per_page",
+									"value": "10"
+								},
+								{
+									"key": " sort_order",
+									"value": "desc"
+								},
+								{
+									"key": "search",
+									"value": ""
+								},
+								{
+									"key": "city_id",
+									"value": null
+								},
+								{
+									"key": "bedrooms",
+									"value": null
+								},
+								{
+									"key": "ads_type",
+									"value": null
+								},
+								{
+									"key": "type",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Draft Ads",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/place-an-ad/user-ads?agency_id=115&status=draft&category_id=&per_page=10& sort_order=desc&search=&city_id&bedrooms&ads_type&type",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"place-an-ad",
+								"user-ads"
+							],
+							"query": [
+								{
+									"key": "agency_id",
+									"value": "115"
+								},
+								{
+									"key": "status",
+									"value": "draft"
+								},
+								{
+									"key": "category_id",
+									"value": ""
+								},
+								{
+									"key": "per_page",
+									"value": "10"
+								},
+								{
+									"key": " sort_order",
+									"value": "desc"
+								},
+								{
+									"key": "search",
+									"value": ""
+								},
+								{
+									"key": "city_id",
+									"value": null
+								},
+								{
+									"key": "bedrooms",
+									"value": null
+								},
+								{
+									"key": "ads_type",
+									"value": null
+								},
+								{
+									"key": "type",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Inquiries",
+			"item": [
+				{
+					"name": "Get All Inquiries",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/inquiries?is_read=&date_from=&date_to=&search=&per_page=10&sort_by=id&sort_order=desc",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"inquiries"
+							],
+							"query": [
+								{
+									"key": "is_read",
+									"value": ""
+								},
+								{
+									"key": "date_from",
+									"value": ""
+								},
+								{
+									"key": "date_to",
+									"value": ""
+								},
+								{
+									"key": "search",
+									"value": ""
+								},
+								{
+									"key": "per_page",
+									"value": "10"
+								},
+								{
+									"key": "sort_by",
+									"value": "id"
+								},
+								{
+									"key": "sort_order",
+									"value": "desc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Inquiries by Ad ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/inquiries?ad_id=4113&is_read=&date_from=&date_to=&search=&per_page=10",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"inquiries"
+							],
+							"query": [
+								{
+									"key": "ad_id",
+									"value": "4113"
+								},
+								{
+									"key": "is_read",
+									"value": ""
+								},
+								{
+									"key": "date_from",
+									"value": ""
+								},
+								{
+									"key": "date_to",
+									"value": ""
+								},
+								{
+									"key": "search",
+									"value": ""
+								},
+								{
+									"key": "per_page",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show Inquiry",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/inquiries/12078",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"inquiries",
+								"12078"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create New Inquiry",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"John Doe\",\n    \"email\": \"john.doe@example.com\",\n    \"phone\": \"+971501234567\",\n    \"meassage\": \"I am interested in this property. Please contact me with more details.\",\n    \"ad_id\": 22,\n    \"contact_type\": \"ENQUIRY\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/contact",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"contact"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mark Inquiry as Read",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/inquiries/12078/mark-read",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"inquiries",
+								"12078",
+								"mark-read"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mark Inquiry as Unread",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/inquiries/12078/mark-unread",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"inquiries",
+								"12078",
+								"mark-unread"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Plans",
+			"item": [
+				{
+					"name": "Get All Packages",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/packages?per_page=10&sort_by=price_per_month&sort_order=asc&category=1&search=package",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"packages"
+							],
+							"query": [
+								{
+									"key": "per_page",
+									"value": "10"
+								},
+								{
+									"key": "sort_by",
+									"value": "price_per_month"
+								},
+								{
+									"key": "sort_order",
+									"value": "asc"
+								},
+								{
+									"key": "category",
+									"value": "1"
+								},
+								{
+									"key": "search",
+									"value": "package"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Purchase Histroy",
+			"item": [
+				{
+					"name": "Get User Packages",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"// Set base URL if not already set",
+									"if (!pm.environment.get(\"base_url\")) {",
+									"    pm.environment.set(\"base_url\", \"http://localhost:8000/api\");",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/user-packages?per_page=15&sort_by=created_at&sort_direction=desc",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"user-packages"
+							],
+							"query": [
+								{
+									"key": "per_page",
+									"value": "15",
+									"description": "Number of items per page (default: 15)"
+								},
+								{
+									"key": "sort_by",
+									"value": "created_at",
+									"description": "Field to sort by (default: created_at)"
+								},
+								{
+									"key": "sort_direction",
+									"value": "desc",
+									"description": "Sort direction: asc or desc (default: desc)"
+								},
+								{
+									"key": "status",
+									"value": "",
+									"description": "Filter by status",
+									"disabled": true
+								},
+								{
+									"key": "category_id",
+									"value": "",
+									"description": "Filter by category ID",
+									"disabled": true
+								},
+								{
+									"key": "package_id",
+									"value": "",
+									"description": "Filter by package ID",
+									"disabled": true
+								},
+								{
+									"key": "date_from",
+									"value": "",
+									"description": "Filter by start date (YYYY-MM-DD)",
+									"disabled": true
+								},
+								{
+									"key": "date_to",
+									"value": "",
+									"description": "Filter by end date (YYYY-MM-DD)",
+									"disabled": true
+								},
+								{
+									"key": "active_only",
+									"value": "",
+									"description": "Show only active packages (true/false)",
+									"disabled": true
+								},
+								{
+									"key": "expired_only",
+									"value": "",
+									"description": "Show only expired packages (true/false)",
+									"disabled": true
+								},
+								{
+									"key": "search",
+									"value": "",
+									"description": "Search by package name",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Get user's subscribed packages with filtering, sorting and pagination options"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Active Packages",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/user-packages/active?per_page=15",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"user-packages",
+								"active"
+							],
+							"query": [
+								{
+									"key": "per_page",
+									"value": "15",
+									"description": "Number of items per page (default: 15)"
+								}
+							]
+						},
+						"description": "Get only active user packages"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Expired Packages",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/user-packages/expired?per_page=15",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"user-packages",
+								"expired"
+							],
+							"query": [
+								{
+									"key": "per_page",
+									"value": "15",
+									"description": "Number of items per page (default: 15)"
+								}
+							]
+						},
+						"description": "Get only expired user packages"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Package Details",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/user-packages/18",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"user-packages",
+								"18"
+							]
+						},
+						"description": "Get detailed information about a specific user package"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Packages Summary",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/user-packages/summary",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"user-packages",
+								"summary"
+							]
+						},
+						"description": "Get statistical summary of user's packages"
+					},
+					"response": []
+				},
+				{
+					"name": "Cancel Package",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/user-packages/18/cancel",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"user-packages",
+								"18",
+								"cancel"
+							]
+						},
+						"description": "Cancel a user package subscription"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Developers",
+			"item": [
+				{
+					"name": "List Developers",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/listings/developers",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"listings",
+								"developers"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Amenities",
+			"item": [
+				{
+					"name": "List amenities",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/listings/amenities?category_id=31",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"listings",
+								"amenities"
+							],
+							"query": [
+								{
+									"key": "category_id",
+									"value": "31"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Billing & Invoice",
+			"item": [
+				{
+					"name": "List billing",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/billing",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"billing"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Manage Subscription",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/manage-subscription",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"manage-subscription"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Invoice",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/billing/88/invoice",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"billing",
+								"88",
+								"invoice"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show billing",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/billing/89",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"billing",
+								"89"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Property Ads",
+			"item": [
+				{
+					"name": "Create Sale Property",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"section_id\": 1,            // Sale = 1\n    \"listing_type\": 118,        // Commercial = 120 and Residential = 118\n    \"category_id\": 30,\n    \"ad_title\": \"Luxury Villa in Downtown\",\n    \"ad_description\": \"Beautiful 4-bedroom villa with modern amenities, swimming pool, and garden. Located in prime location with easy access to shopping centers and schools.\",\n    \"price\": 2500000,\n    \"ask_for_price\": 0,                              // Ask for Price = 1 or 0\n    \"mobile_number\": \"+971501234567\",\n    \"sub_category_id\": null,\n    \"country\": 65946,\n    \"state\": 55371,\n    \"city\":195594,\n    \"district\": null,\n    \"community_id\":null,\n    \"sub_community_id\": null,\n    \"developer_id\": 5,\n    \"bedrooms\": 4,\n    \"bathrooms\": 3,\n    \"car_parking\": 2,\n    \"balconies\": 2,\n    \"total_floor\": 2,\n    \"builtup_area\": 3500,\n    \"plot_area\": 5000,\n    \"year_built\": 2022,\n    \"location_latitude\": 25.2048,\n    \"location_longitude\": 55.2708,\n    \"area_location\": \"Downtown Dubai\",\n    \"street_address\": \"123 Main Street, Downtown\",\n    \"furnished\": \"Y\",\n    \"maid_room\": \"Y\",\n    \"construction_status\": \"R\",                 // R = Ready  and   N = Off-plan\n    \"transaction_type\": \"N\",                   // R = Resale  and   N = New Property\n    \"parking\": \"Y\",\n    \"property_name\": \"Villa Paradise\",\n    \"FloorNo\": \"Ground + 1\",\n    \"PrimaryUnitView\": \"Garden View\",\n    \"contact_name\": \"John Doe\",\n    \"contact_email\": \"john@example.com\",\n    \"salesman_email\": \"sales@example.com\",\n    \"ad_title_ar\": \"فيلا فاخرة في وسط المدينة\",\n    \"ad_description_ar\": \"فيلا جميلة من 4 غرف نوم مع وسائل الراحة الحديثة\",\n    \"meta_title\": \"Luxury Villa for Sale - Downtown Dubai\",\n    \"meta_keywords\": \"villa, luxury, downtown, dubai, sale\",\n    \"meta_description\": \"Premium villa with modern amenities in downtown location\",\n    \"youtube_url\": \"https://www.youtube.com/watch?v=example\",\n    \"images\": [\n        \"villa1.jpg\",\n        \"villa2.jpg\",\n        \"villa3.jpg\",\n        \"villa4.jpg\"\n    ],\n    \"amenities\": [130, 132, 134, 143, 144, 145],\n    \"floor_plans\": [\n        {\n            \"title\": \"Ground Floor Plan\",\n            \"file\": \"ground_floor.pdf\"\n        },\n        {\n            \"title\": \"First Floor Plan\",\n            \"file\": \"first_floor.pdf\"\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/place-an-ad",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"place-an-ad"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Rent Property",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"section_id\": 2,            // Rent = 2\n    \"listing_type\": 120,        // Commercial = 120 and Residential = 118\n    \"category_id\": 33,\n    \"ad_title\": \"Rent Luxury Villa in Downtown\",\n    \"ad_description\": \"Beautiful 4-bedroom villa with modern amenities, swimming pool, and garden. Located in prime location with easy access to shopping centers and schools.\",\n    \"price\": 2500000,\n    \"ask_for_price\": 0,                              // Ask for Price = 1 or 0\n    \"mobile_number\": \"+971501234567\",\n    \"sub_category_id\": null,\n    \"country\": 65946,\n    \"state\": 55371,\n    \"city\":195594,\n    \"district\": null,\n    \"community_id\": null,\n    \"sub_community_id\": null,\n    \"developer_id\": 5,\n    \"available_on\": \"2025-07-05\",      // Add if Ad is for Rent.\n    \"rent_paid\": \"monthly\",           // Add if Ad is for Rent.  \"yearly\" or \"monthly\"\n    \"bedrooms\": 4,\n    \"bathrooms\": 3,\n    \"car_parking\": 2,\n    \"balconies\": 2,\n    \"total_floor\": 2,\n    \"builtup_area\": 3500,\n    \"plot_area\": 5000,\n    \"year_built\": 2022,\n    \"location_latitude\": 25.2048,\n    \"location_longitude\": 55.2708,\n    \"area_location\": \"Downtown Dubai\",\n    \"street_address\": \"123 Main Street, Downtown\",\n    \"furnished\": \"Y\",\n    \"maid_room\": \"Y\",\n    \"construction_status\": \"R\",                 // R = Ready  and   N = Off-plan\n    \"transaction_type\": \"N\",                   // R = Resale  and   N = New Property\n    \"parking\": \"Y\",\n    \"property_name\": \"Villa Paradise\",\n    \"FloorNo\": \"Ground + 1\",\n    \"PrimaryUnitView\": \"Garden View\",\n    \"contact_name\": \"John Doe\",\n    \"contact_email\": \"john@example.com\",\n    \"salesman_email\": \"sales@example.com\",\n    \"ad_title_ar\": \"فيلا فاخرة في وسط المدينة\",\n    \"ad_description_ar\": \"فيلا جميلة من 4 غرف نوم مع وسائل الراحة الحديثة\",\n    \"meta_title\": \"Luxury Villa for Sale - Downtown Dubai\",\n    \"meta_keywords\": \"villa, luxury, downtown, dubai, sale\",\n    \"meta_description\": \"Premium villa with modern amenities in downtown location\",\n    \"youtube_url\": \"https://www.youtube.com/watch?v=example\",\n    \"images\": [\n        \"villa1.jpg\",\n        \"villa2.jpg\",\n        \"villa3.jpg\",\n        \"villa4.jpg\"\n    ],\n     \"amenities\": [130, 132, 134, 143, 144, 145],\n    \"floor_plans\": [\n        {\n            \"title\": \"Ground Floor Plan\",\n            \"file\": \"ground_floor.pdf\"\n        },\n        {\n            \"title\": \"First Floor Plan\",\n            \"file\": \"first_floor.pdf\"\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/place-an-ad",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"place-an-ad"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create New Development Property",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"section_id\": 3,            // New Development = 3\n    \"ad_title\": \"New Development Luxury Villa in Downtown\",\n    \"ad_description\": \"Beautiful 4-bedroom villa with modern amenities, swimming pool, and garden. Located in prime location with easy access to shopping centers and schools.\",\n    \"price\": 2500000,\n    \"ask_for_price\": 0,                              // Ask for Price = 1 or 0\n    \"mobile_number\": \"+971501234567\",\n    \"completion_year\": 234,\n    \"sold_or_rented\": \"2025-07-05\",                   // Sold | Rented\n    \"country\": 65946,\n    \"state\": 55371,\n    \"city\":195594,\n    \"district\": null,\n    \"developer_id\": 5,\n    \"payment_plan\": null,\n    \"payment_pdf\": null,\n    \"property_name\": \"Villa Paradise\",\n    \"PrimaryUnitView\": \"Garden View\",\n    \"contact_name\": \"John Doe\",\n    \"contact_email\": \"john@example.com\",\n    \"salesman_email\": \"sales@example.com\",\n    \"ad_title_ar\": \"فيلا فاخرة في وسط المدينة\",\n    \"ad_description_ar\": \"فيلا جميلة من 4 غرف نوم مع وسائل الراحة الحديثة\",\n    \"meta_title\": \"Luxury Villa for Sale - Downtown Dubai\",\n    \"meta_keywords\": \"villa, luxury, downtown, dubai, sale\",\n    \"meta_description\": \"Premium villa with modern amenities in downtown location\",\n    \"youtube_url\": \"https://www.youtube.com/watch?v=example\",\n    \"images\": [\n        \"villa1.jpg\",\n        \"villa2.jpg\",\n        \"villa3.jpg\",\n        \"villa4.jpg\"\n    ],\n    \"amenities\": [130, 132, 134, 143, 144, 145],\n    \"faqs\": [\n        {\n            \"title\": \"What are the payment terms?\",\n            \"file\": \"payment_terms.pdf\"\n        },\n        {\n            \"title\": \"Are pets allowed?\",\n            \"file\": null\n        }\n    ],\n    \"floor_plans\": [\n        {\n            \"title\": \"Ground Floor Plan\",\n            \"file\": \"ground_floor.pdf\"\n        },\n        {\n            \"title\": \"First Floor Plan\",\n            \"file\": \"first_floor.pdf\"\n        }\n    ],\n    \"nearest_schools\": [\n       {\n            \"name\": \"Dubai International School\",\n            \"distance\": 2.5,\n            \"vicinity\": \"https://www.ens.sch.ae/\",\n            \"rating\": 4.3,\n            \"user_ratings_total\": 1,\n            \"status\": \"A\",\n            \"f_type\": \"0\"\n        },\n        {\n            \"name\": \"The British Academy\",\n            \"distance\": 3.1,\n            \"vicinity\": \"https://www.ens.sch.ae/\",\n            \"rating\": 4.7,\n            \"user_ratings_total\": 0,\n            \"status\": \"A\",\n            \"f_type\": \"1\"\n        }\n    ],\n    \"property_types\": [\n        {\n            \"type_id\": 99,\n            \"bed\": 4,\n            \"bath\": 3,\n            \"title\": \"Villa Type A\",\n            \"from_price\": 2500000,\n            \"to_price\": 2500000,\n            \"size\": 3500,\n            \"size_to\": 3500\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/place-an-ad",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"place-an-ad"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Property",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"ad_title\": \"Updated Luxury Villa in Downtown\",\n    \"ad_description\": \"Updated description: Beautiful 4-bedroom villa with modern amenities, newly renovated swimming pool, and landscaped garden.\",\n    \"price\": 2750000,\n    \"mobile_number\": \"+971501234567\",\n    \"country\": 65946,\n    \"state\": 55371,\n    \"city\":195594,\n    \"bedrooms\": 4,\n    \"bathrooms\": 4,\n    \"builtup_area\": 3800,\n    \"furnished\": \"Y\",\n    \"status\": \"A\",\n    \"images\": [\n        \"updated_villa1.jpg\",\n        \"updated_villa2.jpg\",\n        \"updated_villa3.jpg\"\n    ],\n    \"floor_plans\": [\n        {\n            \"title\": \"Updated Ground Floor Plan\",\n            \"file\": \"ground_floor1.pdf\"\n        },\n        {\n            \"title\": \"Updated First Floor Plan\",\n            \"file\": \"first_floor1.pdf\"\n        }\n    ],\n    \"amenities\": [130, 132, 134, 143, 144, 145],\n    \"meta_title\": \"Updated Luxury Villa for Sale - Downtown Dubai\",\n    \"meta_description\": \"Updated premium villa with modern amenities in downtown location\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/place-an-ad/4842",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"place-an-ad",
+								"4842"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show Property",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/place-an-ad/4842",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"place-an-ad",
+								"4842"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Property",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/place-an-ad/4842",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"place-an-ad",
+								"4842"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "key",
+				"value": "X-API-Key",
+				"type": "string"
+			},
+			{
+				"key": "value",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://farming-simulator.pstmn.io"
+		}
+	]
+}

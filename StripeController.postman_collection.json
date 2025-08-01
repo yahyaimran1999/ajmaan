@@ -1,0 +1,185 @@
+{
+  "info": {
+    "name": "StripeController API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Subscription Checkout",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"package_id\": \"1\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/subscription/checkout",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "subscription", "checkout"]
+        }
+      }
+    },
+    {
+      "name": "Subscription Success",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8000/api/subscription/success?session_id=cs_test_123",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "subscription", "success"],
+          "query": [
+            { "key": "session_id", "value": "cs_test_123" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Subscription Cancel",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8000/api/subscription/cancel",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "subscription", "cancel"]
+        }
+      }
+    },
+    {
+      "name": "Customer Portal",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8000/api/customer/portal",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "customer", "portal"]
+        }
+      }
+    },
+    {
+      "name": "Subscription Status",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8000/api/subscription/status",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "subscription", "status"]
+        }
+      }
+    },
+    {
+      "name": "Cancel Subscription",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8000/api/subscription/cancel",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "subscription", "cancel"]
+        }
+      }
+    },
+    {
+      "name": "Resume Subscription",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8000/api/subscription/resume",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "subscription", "resume"]
+        }
+      }
+    },
+    {
+      "name": "Handle Webhook",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"example\": \"webhook payload\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/stripe/webhook",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "stripe", "webhook"]
+        }
+      }
+    },
+    {
+      "name": "Get Packages",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8000/api/packages",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "packages"]
+        }
+      }
+    },
+    {
+      "name": "Get Subscription Products",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8000/api/subscription/products",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "subscription", "products"]
+        }
+      }
+    }
+  ]
+}
